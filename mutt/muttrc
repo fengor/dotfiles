@@ -1,0 +1,96 @@
+
+# Paths
+set folder		= ~/.mail
+set alias_file		= ~/.mutt/alias
+set header_cache	= ~/.mutt/cache/headers
+set message_cachedir	= ~/.mutt/cache/bodies
+set certificate_file	= /etc/ssl/certs/ca-certificates.crt
+set mailcap_path	= ~/.mutt/mailcap
+set tmpdir		= ~/.mutt/temp
+set signature		= ~/.mutt/sig
+
+# Basic Options
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set beep_new
+set pipe_decode
+set thorough_search
+source ~/.mutt/themes/badwolf
+
+# Status bar
+set status_chars = " *%A"
+set status_format = "---[ Folder:%f ]---[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]---%>-%?p?( %p postponed )?---"
+
+# Header options
+ignore *
+unignore from: to: cc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: date: subject:
+
+# Index view
+set date_format = "%y-%m-%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+bind index gg 		first-entry
+bind index G 		last-entry
+bind index R 		group-reply
+bind index <tab>	sync-mailbox
+bind index <space>	collapse-thread
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages read"
+macro index O "<shell-escape>offlineimap<enter>"		"sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>"	"sync only inbox"
+macro index C "<copy-message>?<toggle-mailboxes>"		"copy message"
+macro index M "<save message>?<toggle-mailboxes>"		"move message"
+
+# Pager view
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+bind attach <return> view-mailcap
+
+# Compose view
+set editor = vim
+set realname = "Daniel Brachmann"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set forward_decode
+set attribution = "On $d, %n wrote:"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+
+
+
+# Accounts
+source ~/.mutt/accounts/daniel.brachmann@gmail.com
+
