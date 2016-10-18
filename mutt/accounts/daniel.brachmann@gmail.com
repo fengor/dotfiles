@@ -1,5 +1,8 @@
 # daniel.brachmann@gmail.com
 
+set from	= "daniel.brachmann@gmail.com"
+set sendmail 	= "msmtp -a daniel.brachmann@gmail.com"
+set sendmail_wait = 0
 set spoolfile = "+daniel.brachmann@gmail.com/INBOX"
 
 # alternates *@fengors-realm.de
@@ -10,10 +13,16 @@ mailboxes 	+daniel.brachmann@gmail.com/INBOX \
 		+daniel.brachmann@gmail.com/drafts \
 
 set mbox = "+daniel.brachmann@gmail.com/archive"
-set mbox = "+daniel.brachmann@gmail.com/drafts"
+set postponed = "+daniel.brachmann@gmail.com/drafts"
 
-set from	= "daniel.brachmann@gmail.com"
-# set sendmail 	= "/usr/local/bin/msmtp -a daniel.brachmann@gmail.com"
-set sendmail_wait = 0
 unset record
 
+color status green default
+
+macro index D \
+	"<save-message>+daniel.brachmann@gmail.com/Trash<enter>" \
+	"move message to trash"
+
+macro index S \
+	"<save-message>+daniel.brachmann@gmail.com/Spam<enter>" \
+	"mark message as spam"

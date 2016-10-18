@@ -45,7 +45,6 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -123,8 +122,13 @@ bindcode 123 exec --no-startup-id amixer -c1 set Master 10+ unmute -q
 bindcode 232 exec --no-startup-id xbacklight -dec 5
 bindcode 233 exec --no-startup-id xbacklight -inc 5
 
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/shots'
 bindsym Mod1+Print exec --no-startup-id scrot -u -b -e 'mv $f ~/Pictures/shots'
+bindsym $mod+l exec i3lock -c 000000
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -6,7 +6,7 @@ set header_cache	= ~/.mutt/cache/headers
 set message_cachedir	= ~/.mutt/cache/bodies
 set certificate_file	= /etc/ssl/certs/ca-certificates.crt
 set mailcap_path	= ~/.mutt/mailcap
-set tmpdir		= ~/.mutt/temp
+set tmpdir		= /tmp
 set signature		= ~/.mutt/sig
 
 # Basic Options
@@ -95,5 +95,7 @@ set forward_quote
 
 
 # Accounts
+set spoolfile = "+daniel.brachmann@gmail.com/INBOX"
 source ~/.mutt/accounts/daniel.brachmann@gmail.com
 
+folder-hook daniel.brachmann@gmail.com/*	source ~/.mutt/accounts/daniel.brachmann@gmail.com
