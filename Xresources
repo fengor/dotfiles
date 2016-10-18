@@ -1,0 +1,25 @@
+URxvt*color1:           #FF0033
+URxvt*color9:           #C0392B
+URxvt*color2:           #2ecc71
+URxvt*color10:          #27ae60
+URxvt*color3:           #f1c40f
+URxvt*color11:          #f39c12
+URxvt*color4:           #3498db
+URxvt*color12:          #2980b9
+URxvt*color5:           #9b59b6
+URxvt*color13:          #8e44ad
+URxvt*color6:           #1abc9c
+URxvt*color14:          #16a085
+URxvt*color7:           #ecf0f1
+URxvt*color15:          #bdc3c7
+URxvt.foreground :      #bdc3c7
+URxvt*color0:           #2B2B2B
+URxvt*color8:           #252525
+URxvt.background :      #252525
+
+URxvt.scrollBar: off
+URxvt.font: xft:Inconsolata :size=12
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: xdg-open
+URxvt.matcher.button: 1

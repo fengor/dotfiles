@@ -6,3 +6,8 @@ else
 fi
 export GPG_AGENT_INFO  # the env file does not contain the export statement
 export SSH_AUTH_SOCK   # enable gpg-agent for ssh
+
+alias ls='ls --color=auto'
+alias wifi-menu='sudo wifi-menu'
+alias vpnon="sudo openvpn /var/run/openvpn.pid /etc/openvpn/fengors-realm.de/fengors-realm.de.ovpn"
+PS1='[\u@\h \W]\$ '
