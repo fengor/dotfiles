@@ -5,7 +5,8 @@ export SSH_AUTH_SOCK   # enable gpg-agent for ssh
 
 alias ls='ls --color=auto'
 alias wifi-menu='sudo wifi-menu'
-alias vpnon="sudo openvpn /var/run/openvpn.pid /etc/openvpn/fengors-realm.de/fengors-realm.de.ovpn"
+alias vpnon="sudo openvpn --writepid /var/run/openvpn.pid --config /etc/openvpn/fengors-realm.de/fengors-realm.de.ovpn"
 PS1='[\u@\h \W]\$ '
 
-export PATH="${PATH}:~/go/bin"
+export GOPATH="/home/fengor/go" 
+export PATH="${PATH}:${GOPATH}/bin"

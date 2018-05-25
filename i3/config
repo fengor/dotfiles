@@ -116,9 +116,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # bind multimedia keys
-bindcode 121 exec --no-startup-id amixer -c1 set Master toggle && amixer -c1 set Speaker unmute
-bindcode 122 exec --no-startup-id amixer -c1 set Master 10- unmute -q
-bindcode 123 exec --no-startup-id amixer -c1 set Master 10+ unmute -q
+bindcode 121 exec --no-startup-id amixer set Master toggle && amixer set Speaker unmute
+bindcode 122 exec --no-startup-id amixer set Master 10- unmute -q
+bindcode 123 exec --no-startup-id amixer set Master 10+ unmute -q
 bindcode 232 exec --no-startup-id xbacklight -dec 5
 bindcode 233 exec --no-startup-id xbacklight -inc 5
 
