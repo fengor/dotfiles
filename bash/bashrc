@@ -6,10 +6,16 @@ export SSH_AUTH_SOCK   # enable gpg-agent for ssh
 alias ip='ip --color'
 alias ipb='ip --color --brief'
 alias ls='ls --color=auto'
-alias wifi-menu='sudo wifi-menu'
-alias vpnon="sudo openvpn --writepid /var/run/openvpn.pid --config /etc/openvpn/fengors-realm.de/fengors-realm.de.ovpn"
 alias fuck!='sudo $(history -p !!)'
 PS1='[\u@\h \W]\$ '
 
-export GOPATH="/home/fengor/go" 
+export GOPATH="~/go" 
 export PATH="${PATH}:${GOPATH}/bin"
+
+if [ -e /usr/share/fzf/completion.bash ]; then
+	. /usr/share/fzf/completion.bash
+	. /usr/share/fzf/key-bindings.bash
+fi
+export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMADN="$FZF_DEFAULT_COMMAND"
