@@ -2,7 +2,20 @@ set nocompatible
 filetype off
 
 " Plug plugin manager 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/fzf'
+Plug 'tpope/vim-unimpaired'
+Plug 'sheerun/vim-polyglot'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'itchyny/lightline.vim'
+call plug#end()
 
 syntax on
 set background=dark
