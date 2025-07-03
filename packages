@@ -1,4 +1,12 @@
+# essentials 
 vim
+tmux 
+curl
 stow
+
+# development
 git
+
+# graphical interface
 sway
+foot
