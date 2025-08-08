@@ -1,3 +1,5 @@
 [user]
 	email = daniel.gross@l-bank.de
 	name = Daniel Groß
+[init]
+	defaultBranch = main

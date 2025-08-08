@@ -3,11 +3,20 @@ vim
 tmux 
 curl
 stow
-
-# development
+keepassxc
 git
+
+# commandline
+zsh
+#ohmyposh
+#
+
+# pkm
+#obsidian
 
 # graphical interface
 sway
 foot
 qutebrowser
+playerctl
+
