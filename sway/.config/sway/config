@@ -65,6 +65,10 @@ output * bg $HOME/.config/sway/ed_diamondbackxl_shipyard.jpg fill
 # Read `man 5 sway-input` for more information about this section.
 
 input "type:pointer" accel_profile flat
+input "type:keyboard" {
+	xkb_layout "us"
+	xkb_variant "intl"
+}
 
 ### Key bindings
 #
@@ -118,9 +122,6 @@ input "type:pointer" accel_profile flat
 #
 # Workspaces:
 #
-	set $ws1 "" 
-	set $ws2 "" 
-	set $ws3 ""
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -148,10 +149,10 @@ input "type:pointer" accel_profile flat
     # We just use 1-10 as the default.
 
 
-    assign [app_id="obsidian"] workspace $ws1
-    assign [app_id="chromium"] workspace $ws2
-    assign [app_id="firefox"] workspace $ws2
-    assign [app_id="foot"] workspace $ws3
+    assign [app_id="obsidian"] workspace number 1
+    assign [app_id="chromium"] workspace number 2
+    assign [app_id="firefox"] workspace number 2
+    assign [app_id="foot"] workspace number 3
 
 
 #
