@@ -55,11 +55,12 @@ alias ls='exa --color --icons auto'
 alias vim='nvim'
 alias c='clear'
 alias k='kubectl'
+alias ai_credits="powershell.exe -c Start-Process 'https://github.com/settings/copilot/features'"
+alias r_np="open_inprivate $RANCHER_NONPROD"
+alias r_p="open_inprivate $RANCHER_PROD"
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
-export KUBECONFIG="$HOME/.kube/config"
 
 #safe url opening from powershell
 open() {
@@ -70,3 +71,13 @@ open() {
 
   powershell.exe -NoProfile -NonInteractive -Command "Start-Process '$1'"
 }
+open_inprivate() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: open_inprivate <url>"
+    return 1
+  fi
+
+  powershell.exe -NoProfile -NonInteractive -Command "Start-Process msedge -ArgumentList \"-inprivate\",\"$1\""
+}
+
+. .env/cleo_variables
