@@ -1,1 +1,26 @@
 mutt/cache
+
+# gcloud: credentials, tokens, local state, logs and caches - never commit
+gcloud/.config/gcloud/
+
+# gh: hosts.yml stores the OAuth token
+gh/.config/gh/hosts.yml
+
+# go: local telemetry state
+go/.config/go/telemetry/
+
+# helm: registry auth/cache
+helm/.config/helm/registry/
+
+# tmux: plugins are installed/managed by TPM, not hand-authored config
+tmux/.config/tmux/plugins/
+
+# nvim: generated logs/caches
+nvim/.config/nvim/startup.log
+nvim/.config/nvim/lazy-lock.json
+
+# editor/OS cruft
+*.swp
+*.swo
+*~
+.DS_Store
